@@ -5,8 +5,8 @@ import java.util.List;
 
 public class RemoteController {
 
-    List<Command> onCommands=new ArrayList<>();
-    List<Command> offCommands=new ArrayList<>();
+    List<Command> onCommands=new ArrayList();
+    List<Command> offCommands=new ArrayList();
 
     Command onDuCommands;
 
@@ -29,7 +29,7 @@ public class RemoteController {
     }
 
     /**
-     * 执行打开
+     * 执行关闭
      * @param index
      */
     public void offCommand(int index) {
@@ -42,14 +42,14 @@ public class RemoteController {
      * @param index
      */
     public void onCommand(int index) {
-        onCommands.get(index).undo();
+        onCommands.get(index).execute();
         onDuCommands=onCommands.get(index);
     }
 
 
     /**
      * 执行撤销
-     * @param index
+     * @param
      */
     public void duCommand(){
         onDuCommands.undo();

@@ -1,11 +1,13 @@
 package proxy;
 
-public class TeacherDaoProxy implements proxy.ITeacherDao {
+import com.design.cn.prxoy.jdkProxy.ITeacherDao;
+
+public class TeacherDaoProxy implements ITeacherDao {
 
 
-    private proxy.ITeacherDao iTeacherDao;
+    private ITeacherDao iTeacherDao;
 
-    public TeacherDaoProxy(proxy.ITeacherDao iTeacherDao) {
+    public TeacherDaoProxy(ITeacherDao iTeacherDao) {
         this.iTeacherDao = iTeacherDao;
     }
 
